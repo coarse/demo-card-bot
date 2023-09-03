@@ -77,6 +77,15 @@ Resources:
           DISCORD_PUBLIC_KEY: '{{resolve:secretsmanager:/dev/demo_card_bot/discord:SecretString:public_key}}'
       Layers:
         - !Ref CommandsLayer
+    Connectors:
+      PlayersTableConnector:
+        Properties:
+          Destination:
+            Id: PlayersTable
+          Permissions:
+            - Read
+            - Write
+          
 
 Outputs:
   DiscordInteractionApi:
