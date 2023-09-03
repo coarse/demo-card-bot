@@ -1,9 +1,5 @@
 const { SlashCommand } = require("slash-create");
-const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
-const { DynamoDBDocumentClient, GetCommand } = require("@aws-sdk/lib-dynamodb");
-
-const client = new DynamoDBClient();
-const docClient = DynamoDBDocumentClient.from(client);
+const { Player } = require("../players/model");
 
 module.exports = class DailyCommand extends SlashCommand {
   constructor(creator) {
@@ -16,30 +12,20 @@ module.exports = class DailyCommand extends SlashCommand {
   }
 
   async run(ctx) {
-    console.log('context', ctx)
     const { id: userId } = ctx.user;
 
-    // Fetch user from players table
-    const input = {
-      TableName: "dcb-players",
-      Key: {
-        id: userId,
-      },
-    };
-    const command = new GetCommand({
-        TableName: 'dcb-players',
-        Key: {
-            id: userId,
-        }
-    });
+    const player = await Player.fromId(userId);
 
-    try {
-        const response = await docClient.send(command);
-        console.log(response);
-    } catch (error) {
-        console.log('Failed to fetch from table', error);
-    }
+    const fishAmount = 150 + Math.floor(Math.random() * (100 + 1));
+    const shellsAmount = 3 + Math.floor(Math.random() * (7 + 1));
 
-    return `Claiming reward for ${userId}...`;
+    player
+      .callCommand("daily")
+      .increaseFish(fishAmount)
+      .increaseShells(shellsAmount);
+
+    await player.upload();
+
+    return `Claimed ${fishAmount} :fish: and ${shellsAmount} :shell:. New Balance: ${player.getFish()} :fish:, ${player.getShells()} :shell:`;
   }
 };
