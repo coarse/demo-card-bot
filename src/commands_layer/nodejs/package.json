@@ -1,7 +1,7 @@
 {
-  "name": "serverless-discord-bot.commands_layer",
+  "name": "demo-card-bot.commands_layer",
   "version": "0.0.1",
-  "author": "ytausch",
+  "author": "coarse",
   "license": "MIT",
   "dependencies": {
     "slash-create": "^5.10.0"

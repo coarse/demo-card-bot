@@ -1,8 +1,8 @@
 {
-  "name": "serverless-discord-bot.create_commands",
+  "name": "demo-card-bot.create_commands",
   "version": "0.0.1",
   "main": "index.js",
-  "author": "ytausch",
+  "author": "coarse",
   "license": "MIT",
   "dependencies": {
     "cfn-lambda": "^5.1.0"

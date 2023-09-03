@@ -1,4 +1,4 @@
-# serverless-discord-bot
+# demo-card-bot
 
 > A serverless Discord Bot template built for [AWS Lambda](https://aws.amazon.com/lambda) based on Discord's [slash commands](https://discord.com/developers/docs/interactions/slash-commands) and the [slash-create](https://github.com/Snazzah/slash-create) library.
 

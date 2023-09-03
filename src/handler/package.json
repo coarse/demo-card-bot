@@ -1,8 +1,8 @@
 {
-  "name": "serverless-discord-bot.handler",
+  "name": "demo-card-bot.handler",
   "version": "0.0.1",
   "main": "index.js",
-  "author": "ytausch",
+  "author": "coarse",
   "license": "MIT",
   "devDependencies": {
     "slash-create": "^5.10.0"
