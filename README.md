@@ -15,7 +15,7 @@ It contains a [CloudFormation](https://aws.amazon.com/cloudformation/) template 
 | `DiscordHandlerFunction` | `src/handler` | Lambda function responsible for handling and executing your commands |
 
 ### Credentials
-Discord credentials are retrieved from an [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) secret named `/dev/serverless_discord_bot/discord` you have to create manually before deploying the stack.
+Discord credentials are retrieved from an [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) secret named `/dev/demo_card_bot/discord` you have to create manually before deploying the stack.
 
 It must contain the following (self-explanatory) key/value pairs you get from the [Discord Developer Portal](https://discord.com/developers):
 - `app_id`
