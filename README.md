@@ -27,7 +27,7 @@ It must contain the following (self-explanatory) key/value pairs you get from th
 2. Create a new Secrets Manager secret
     - Secret Type: *other*
     - Add your Discord credentials (see above)
-    - Set the name of the secret to `/dev/serverless_discord_bot/discord`
+    - Set the name of the secret to `/dev/demo_card_bot/discord`
 3. Install the [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html).
    You can optionally also install the [AWS Toolkit](https://aws.amazon.com/tools/) extension for your IDE. 
 4. Clone this repository.

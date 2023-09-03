@@ -1,13 +1,13 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  serverless-discord-bot
+  demo-card-bot
   A Serverless Discord Bot template built with Discord Slash Commands and AWS SAM.
 
 Globals:
   Function:
-    Runtime: nodejs14.x
-    Timeout: 3
+    Runtime: nodejs18.x
+    Timeout: 10
 
 Resources:
   CommandsLayer:
@@ -23,9 +23,9 @@ Resources:
       Handler: index.lambdaHandler
       Environment:
         Variables:
-          DISCORD_APP_ID: '{{resolve:secretsmanager:/dev/serverless_discord_bot/discord:SecretString:app_id}}'
-          DISCORD_PUBLIC_KEY: '{{resolve:secretsmanager:/dev/serverless_discord_bot/discord:SecretString:public_key}}'
-          DISCORD_BOT_TOKEN: '{{resolve:secretsmanager:/dev/serverless_discord_bot/discord:SecretString:bot_token}}'
+          DISCORD_APP_ID: '{{resolve:secretsmanager:/dev/demo_card_bot/discord:SecretString:app_id}}'
+          DISCORD_PUBLIC_KEY: '{{resolve:secretsmanager:/dev/demo_card_bot/discord:SecretString:public_key}}'
+          DISCORD_BOT_TOKEN: '{{resolve:secretsmanager:/dev/demo_card_bot/discord:SecretString:bot_token}}'
       Layers:
         - !Ref CommandsLayer
 
