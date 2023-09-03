@@ -14,6 +14,22 @@ Resources:
     Type: AWS::Serverless::LayerVersion
     Properties:
       ContentUri: ./src/commands_layer
+  
+  PlayersTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions: 
+        - 
+          AttributeName: "id"
+          AttributeType: "S"
+      TableName: "dcb-players"
+      KeySchema: 
+        - 
+          AttributeName: "id"
+          KeyType: "HASH"
+      ProvisionedThroughput: 
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
 
   CreateCommandsFunction:
     Type: AWS::Serverless::Function
