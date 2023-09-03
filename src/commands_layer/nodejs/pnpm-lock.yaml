@@ -1,0 +1,41 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  slash-create:
+    specifier: ^5.10.0
+    version: 5.13.0
+
+packages:
+
+  /eventemitter3@5.0.1:
+    resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
+    dev: false
+
+  /lodash.isequal@4.5.0:
+    resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
+    dev: false
+
+  /slash-create@5.13.0:
+    resolution: {integrity: sha512-cxvX6qCfVAhSuR+fkgN3u705c+lD3XuHCV/HWNCa7upHH9R46K9v73+AShMmWfmWlBszM9zJFKcB1MCgS/bHUw==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      express: ^4
+      fastify: ^3 || ^4
+    peerDependenciesMeta:
+      express:
+        optional: true
+      fastify:
+        optional: true
+    dependencies:
+      eventemitter3: 5.0.1
+      lodash.isequal: 4.5.0
+      tweetnacl: 1.0.3
+    dev: false
+
+  /tweetnacl@1.0.3:
+    resolution: {integrity: sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==}
+    dev: false
