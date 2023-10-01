@@ -6,6 +6,6 @@
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.405.0",
     "@aws-sdk/lib-dynamodb": "^3.405.0",
-    "slash-create": "^5.10.0"
+    "slash-create": "^5.14.0"
   }
 }
